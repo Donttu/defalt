@@ -24,7 +24,6 @@ but for demonstration and practice purposes, I decided to share something here.
 
 - `/info` - Display bot information and server-specific configuration status
 
-
 ## Multi-Server Support
 
 The bot can operate in multiple Discord servers simultaneously, each with independent reaction role configuration:
@@ -60,40 +59,6 @@ The bot can operate in multiple Discord servers simultaneously, each with indepe
   }
 }
 ```
-
-## Development & Extension
-
-### Adding New Slash Commands
-
-1. **Register the command** in `SlashCommandService.RegisterCommandsAsync()`:
-```csharp
-var setupCommand = new SlashCommandBuilder()
-    .WithName("setup")
-    .WithDescription("Setup reaction roles for this server");
-await _client.CreateGlobalApplicationCommandAsync(setupCommand.Build());
-```
-
-2. **Handle the command** in `SlashCommandService.HandleSlashCommandAsync()`:
-```csharp
-case "setup":
-    await HandleSetupCommandAsync(command);
-    break;
-```
-
-### Adding New Configuration Options
-
-1. Add properties to `ServerConfig` class in `Configuration/DiscordConfig.cs`
-2. Update `appsettings.template.json` with new configuration options
-3. Use the new configuration in `ReactionRoleService`
-
-### Customizing Reaction Behavior
-
-The `ReactionRoleService` provides several customization options:
-
-- **Multiple Emojis**: Modify `IsCorrectEmoji()` to accept multiple emojis
-- **Role Stacking**: Add logic to assign multiple roles based on different reactions
-- **Temporary Roles**: Add time-based role removal
-- **Role Requirements**: Add checks for existing roles before assignment
 
 ## Troubleshooting
 
