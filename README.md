@@ -18,7 +18,6 @@ but for demonstration and practice purposes, I decided to share something here.
 - **Slash Commands**: Modern Discord slash command interface
 - **Secure Configuration**: Multiple token management options for safe deployment
 - **Comprehensive Logging**: Detailed logging for monitoring and debugging
-- **Container Ready**: Designed for containerized deployment
 
 ## Available Commands
 
