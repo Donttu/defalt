@@ -7,7 +7,7 @@
 [![GitHub repo](https://img.shields.io/badge/GitHub-defalt-181717?logo=github)](https://github.com/Donttu/defalt)
 [![C#](https://img.shields.io/badge/C%23-12.0-239120?logo=c-sharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
 
-A modern Discord bot built with Discord.Net and .NET 9.0, designed mainly for reaction-based role assignment across multiple servers.
+A modern Discord bot built with Discord.Net and .NET 9.0, designed mainly for reaction-based role assignment across multiple servers to begin with.
 All the features developed are based on the needs of me and my peers. The bot is not intended to be deployed by anyone else other than me, 
 but for demonstration and practice purposes, I decided to share something here.
 
