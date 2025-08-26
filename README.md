@@ -95,27 +95,6 @@ The `ReactionRoleService` provides several customization options:
 - **Temporary Roles**: Add time-based role removal
 - **Role Requirements**: Add checks for existing roles before assignment
 
-## Container Deployment
-
-The bot is designed for containerized deployment:
-
-```dockerfile
-FROM mcr.microsoft.com/dotnet/runtime:9.0
-COPY . /app
-WORKDIR /app
-ENV DEFALT_Discord__Token=""
-ENTRYPOINT ["dotnet", "Defalt.dll"]
-```
-
-Set configuration via environment variables:
-```bash
-docker run \
-  -e DEFALT_Discord__Token="your_token" \
-  -e DEFALT_Discord__Servers__0__ServerId="123456789" \
-  -e DEFALT_Discord__Servers__0__AutoRoleId="987654321" \
-  your-bot-image
-```
-
 ## Troubleshooting
 
 The developer does not provide any official support for troubleshooting. And there is no point in asking for one.
