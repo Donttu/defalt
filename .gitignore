@@ -1,0 +1,37 @@
+# Build results
+bin/
+obj/
+*.user
+*.suo
+*.cache
+
+# Configuration files with secrets
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
+
+# Environment files
+.env
+.env.local
+
+# Visual Studio
+.vs/
+*.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
