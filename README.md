@@ -1,5 +1,12 @@
 # Defalt Discord Bot v2.0
 
+[![.NET](https://img.shields.io/badge/.NET-9.0-blue)](https://dotnet.microsoft.com/)
+[![Discord.Net](https://img.shields.io/badge/Discord.Net-3.18.0-7289da)](https://github.com/discord-net/Discord.Net)
+[![Build Status](https://github.com/Donttu/defalt/workflows/Build%20and%20Test/badge.svg)](https://github.com/Donttu/defalt/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub repo](https://img.shields.io/badge/GitHub-defalt-181717?logo=github)](https://github.com/Donttu/defalt)
+[![C#](https://img.shields.io/badge/C%23-12.0-239120?logo=c-sharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
+
 A modern Discord bot built with Discord.Net and .NET 9.0, designed for reaction-based role assignment across multiple servers.
 
 ## Features
@@ -328,6 +335,24 @@ Example log output:
 [INFO] Slash command info executed by username in Linkin fuksit S2025
 ```
 
-## License
+## ⚡ Built With
 
-This project is open source and available under the MIT License.
+- **[.NET 9.0](https://dotnet.microsoft.com/)** - Runtime and framework
+- **[Discord.Net](https://github.com/discord-net/Discord.Net)** - Discord API wrapper
+- **[Microsoft.Extensions.Hosting](https://docs.microsoft.com/en-us/dotnet/core/extensions/hosting)** - Background service hosting
+- **[Microsoft.Extensions.Configuration](https://docs.microsoft.com/en-us/dotnet/core/extensions/configuration)** - Configuration management
+- **[Microsoft.Extensions.Logging](https://docs.microsoft.com/en-us/dotnet/core/extensions/logging)** - Structured logging
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### What this means:
+- ✅ **Commercial use** - You can use this commercially
+- ✅ **Modification** - You can modify the code
+- ✅ **Distribution** - You can distribute the code
+- ✅ **Private use** - You can use it privately
+- ✅ **No liability** - Authors are not liable for damages
+- ⚠️ **License and copyright notice** - Must include the license in copies
+
+

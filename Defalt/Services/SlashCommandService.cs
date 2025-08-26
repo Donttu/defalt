@@ -28,7 +28,7 @@ public class SlashCommandService
             // Create the /info command
             var infoCommand = new SlashCommandBuilder()
                 .WithName("info")
-                .WithDescription("Display bot information and server statistics");
+                .WithDescription("Display bot information");
 
             await _client.CreateGlobalApplicationCommandAsync(infoCommand.Build());
             _logger.LogInformation("Successfully registered slash commands");
@@ -59,40 +59,13 @@ public class SlashCommandService
         var serverConfig = _config.Servers.FirstOrDefault(s => s.ServerId == guild?.Id);
         
         var embed = new EmbedBuilder()
-            .WithTitle("Defalt Bot Information")
-            .WithDescription("A Discord bot for reaction-based role assignment and server management")
+            .WithTitle("whoami")
+            .WithDescription("A Discord bot for miscellanous tasks")
             .WithColor(Color.Blue)
             .WithThumbnailUrl(_client.CurrentUser.GetAvatarUrl())
-            .AddField("Version", "2.0", true)
-            .AddField("Uptime", GetUptimeString(), true)
-            .AddField("Total Servers", _client.Guilds.Count, true);
-
-        if (guild != null)
-        {
-            embed.AddField("Current Server", guild.Name, true)
-                 .AddField("Server Members", guild.MemberCount, true);
-
-            if (serverConfig != null)
-            {
-                var role = guild.GetRole(serverConfig.AutoRoleId);
-                var rulesChannel = serverConfig.RulesChannelId.HasValue ? guild.GetTextChannel(serverConfig.RulesChannelId.Value) : null;
-                
-                embed.AddField("Reaction Role", 
-                    serverConfig.EnableReactionRole 
-                        ? (role?.Name ?? "Role not found") 
-                        : "Disabled", true);
-                
-                if (serverConfig.EnableReactionRole)
-                {
-                    embed.AddField("Rules Channel", rulesChannel?.Name ?? "Not configured", true);
-                    embed.AddField("Reaction Emoji", serverConfig.ReactionEmoji, true);
-                }
-            }
-            else
-            {
-                embed.AddField("Server Configuration", "Not configured", true);
-            }
-        }
+            .AddField("Version", "1.0", true)
+            .AddField("Age", GetUptimeString(), true)
+            .AddField("Owner", "https://github.com/Donttu", true);
 
         embed.WithFooter($"Requested by {command.User.Username}", command.User.GetAvatarUrl())
              .WithTimestamp(DateTime.UtcNow);
@@ -103,6 +76,8 @@ public class SlashCommandService
     private string GetUptimeString()
     {
         var uptime = DateTime.UtcNow - _client.CurrentUser.CreatedAt;
-        return $"{uptime.Days}d {uptime.Hours}h {uptime.Minutes}m";
+        var years = uptime.Days / 365;
+        var remainingDays = uptime.Days % 365;
+        return $"{years} years, {remainingDays} days";
     }
 }
