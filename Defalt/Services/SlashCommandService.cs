@@ -126,7 +126,7 @@ public class SlashCommandService
             return;
         }
 
-        await command.DeferAsync();
+        await command.DeferAsync(ephemeral: true);
 
         try
         {
@@ -146,7 +146,7 @@ public class SlashCommandService
                     .WithFooter($"Requested by {command.User.Username}", command.User.GetAvatarUrl())
                     .WithTimestamp(DateTime.UtcNow);
 
-                await command.FollowupAsync(embed: embed.Build());
+                await command.FollowupAsync(embed: embed.Build(), ephemeral: true);
                 _logger.LogInformation("Successfully whitelisted user {Username}", username);
             }
             else

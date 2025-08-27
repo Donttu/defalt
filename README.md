@@ -89,7 +89,7 @@ https://your-minecraft-server.com/api/whitelist/Steve
 - **Username Validation**: Validates Minecraft username format (3-16 characters, alphanumeric and underscores only)
 - **Error Handling**: Graceful handling of API failures and network issues
 - **Server-Specific**: Each Discord server can have its own whitelist URL
-- **Secure**: Uses ephemeral responses for error messages to avoid spam
+- **Silent Operation**: All responses are ephemeral (only visible to the user who ran the command)
 - **Logging**: Comprehensive logging of whitelist operations for monitoring
 
 ### Usage
