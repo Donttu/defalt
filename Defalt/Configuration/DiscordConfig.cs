@@ -19,4 +19,5 @@ public class ServerConfig
     public bool EnableReactionRole { get; set; } = true;
     public bool EnableWelcomeMessage { get; set; } = false;
     public bool RemoveReactionAfterRole { get; set; } = false;
+    public string? WhitelistUrl { get; set; }
 }
