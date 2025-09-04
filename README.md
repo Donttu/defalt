@@ -7,9 +7,10 @@
 [![GitHub repo](https://img.shields.io/badge/GitHub-defalt-181717?logo=github)](https://github.com/Donttu/defalt)
 [![C#](https://img.shields.io/badge/C%23-12.0-239120?logo=c-sharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
 
-A modern Discord bot built with Discord.Net and .NET 9.0, designed mainly for reaction-based role assignment across multiple servers to begin with.
-All the features developed are based on the needs of me and my peers. The bot is not intended to be deployed by anyone else other than me, 
-but for demonstration and practice purposes, I decided to share something here.
+A Discord bot built with Discord.Net and .NET 9.0.
+All the features developed are based on the needs of me and my peers. 
+The bot is not intended to be deployed by anyone else other than me, 
+but for demonstration and practice purposes, I decided to share it here.
 
 ## Current Features
 
@@ -64,46 +65,7 @@ The bot can operate in multiple Discord servers simultaneously, each with indepe
 
 ## Minecraft Whitelist Integration
 
-The bot supports adding users to Minecraft server whitelists through a web API integration. Users can use the `/whitelist <username>` command to add their Minecraft username to the server's whitelist.
-
-### Configuration
-
-To enable whitelist functionality for a server, add the `WhitelistUrl` field to your server configuration:
-
-```json
-{
-  "ServerId": 123456789012345678,
-  "WhitelistUrl": "https://your-minecraft-server.com/api/whitelist"
-}
-```
-
-The bot will append `/` and the username to this base URL. For example, if a user runs `/whitelist Steve`, the bot will make a GET request to:
-```
-https://your-minecraft-server.com/api/whitelist/Steve
-```
-
-**Important**: The `/whitelist` command will only be available on Discord servers that have the `WhitelistUrl` configured. Servers without this configuration will not see the command.
-
-### Features
-
-- **Username Validation**: Validates Minecraft username format (3-16 characters, alphanumeric and underscores only)
-- **Error Handling**: Graceful handling of API failures and network issues
-- **Server-Specific**: Each Discord server can have its own whitelist URL
-- **Silent Operation**: All responses are ephemeral (only visible to the user who ran the command)
-- **Logging**: Comprehensive logging of whitelist operations for monitoring
-
-### Usage
-
-Users can whitelist themselves using the slash command:
-```
-/whitelist Steve
-```
-
-The bot will:
-1. Validate the username format
-2. Make a request to the configured whitelist URL
-3. Provide feedback on success or failure
-```
+The bot supports adding users to Minecraft server whitelists through a web API integration. Users can use the `/whitelist <username>` command to add their Minecraft username to the server's whitelist. This method is acknowledged to have some potential issues, but those are for me to handle out of sight.
 
 ## Troubleshooting
 

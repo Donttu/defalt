@@ -75,7 +75,7 @@ public class SlashCommandService
                 await HandleWhitelistCommandAsync(command);
                 break;
             default:
-                await command.RespondAsync("Unknown command.");
+                await command.RespondAsync("Unknown command.", ephemeral: true);
                 break;
         }
     }
@@ -97,7 +97,7 @@ public class SlashCommandService
         embed.WithFooter($"Requested by {command.User.Username}", command.User.GetAvatarUrl())
              .WithTimestamp(DateTime.UtcNow);
 
-        await command.RespondAsync(embed: embed.Build());
+        await command.RespondAsync(embed: embed.Build(), ephemeral: true);
     }
 
     private async Task HandleWhitelistCommandAsync(SocketSlashCommand command)
@@ -152,13 +152,13 @@ public class SlashCommandService
             else
             {
                 _logger.LogWarning("Failed to whitelist user {Username}. HTTP Status: {StatusCode}", username, response.StatusCode);
-                await command.FollowupAsync("❌ Failed to add user to whitelist. Please try again later or contact an administrator.", ephemeral: true);
+                await command.FollowupAsync("❌ Failed to add user to whitelist. This may be a temporary issue with the Minecraft server endpoint.", ephemeral: true);
             }
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error occurred while attempting to whitelist user {Username}", username);
-            await command.FollowupAsync("❌ An error occurred while processing the whitelist request. Please try again later.", ephemeral: true);
+            await command.FollowupAsync("❌ An unknown error occurred while processing the whitelist request. Please try again later.", ephemeral: true);
         }
     }
 
